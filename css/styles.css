@@ -1,0 +1,260 @@
+/* git push -u origin main */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: poppins-regular;
+    cursor: none;
+    max-width: 100vw;
+}
+@font-face {
+    font-family: poppins-regular;
+    src: url(/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: playfair;
+    src: url(/fonts/PlayfairDisplay-Italic.ttf);
+}
+html{
+  background: black;
+  cursor: none !important;
+  overflow-x: hidden;
+  /*
+  scroll-snap-type: y mandatory;
+  */
+  scroll-behavior: smooth;
+}
+body{
+    width: 100vw;
+}
+p{
+    font-size: calc(15px + 0.390625vw);
+}
+h1{
+    font-size: 7vw;
+}
+h2{
+    font-size: 5vw;
+}
+
+@keyframes flyout{
+    to{
+        rotate: 30deg;
+        margin-left: 100vw;
+        transform: translateY(-10vh);
+        opacity: .5;
+        scale: 2 2;
+        display: none;
+        overflow: hidden;
+    }
+}
+@keyframes flyout-left{
+    to{
+        rotate: 30deg;
+        margin-left: -50vw;
+        transform: translateY(-10vh);
+        opacity: .5;
+        scale: 2 2;
+        display: none;
+        overflow: hidden;
+    }
+}
+@keyframes zoom-out{
+    to{
+        scale: 2;
+    }
+}
+@keyframes rotate{
+    0%{
+        scale: 1.2;
+    }
+    50%{
+        rotate: 180deg;
+        scale: .5;
+    }
+    100%{
+        rotate: 360deg;
+        scale: 1.2;
+    }
+}
+/* Scroll reveal
+@keyframes scroll-reveal{
+    to{
+        background-size: 100% 100%
+    }
+}
+*/
+
+.mix-blend-mode{
+    mix-blend-mode: difference;
+}
+.cursor {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -100;
+    top: 0;
+    pointer-events: none;
+}
+.cursor-img{
+    width: 100%;
+    height: 100%;
+}
+.mouse {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -100;
+    top: 0;
+    pointer-events: none;
+}
+.mouse-img{
+    width: 100%;
+    height: 100%;
+}
+.content{
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    mix-blend-mode: difference;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 98.8vw;
+    animation: flyout linear;
+    animation-timeline: view(block);
+    animation-range: cover 55% cover 100%;
+    overflow: hidden;
+}
+.flex-element{
+    flex: 0;
+}
+.verkleinert{
+    font-size: x-large;
+}
+.nav{
+    margin-right: 30px;
+    text-align: right;
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+}
+.nav-link{
+    text-decoration: none;
+}
+.nav-link span{
+    margin: 0px;
+}
+.nav-link span:hover{
+    margin: 10px;
+    cursor: none;
+}
+.adresse{
+    margin-top: 10px;
+    margin-left: 50px;
+    text-align: center;
+    max-width: 50vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+.backlayer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+}
+/*
+.section{
+    scroll-snap-align: start;
+}
+*/
+.padding{
+    padding: 20px;
+}
+.rotating-star{
+    position: absolute;
+    mix-blend-mode: difference;
+    height: 100vh;
+    display: flex;
+    top: 90px;
+    margin-left: 22vw;
+    animation: flyout-left linear;
+    animation-timeline: view(block);
+    animation-range: cover 50% cover 90%;
+}
+.rotate{
+    width: 17vw;
+    animation: rotate 9s linear infinite;
+    transform-origin: 50% 50%;
+}
+/* Scroll reveal
+.scroll-reveal span {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-image: linear-gradient(90deg, red, blue);
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    animation: scroll-reveal linear forwards;
+    animation-timeline: view();
+}
+.scroll-reveal h1 span {
+    animation-range-start: contain 10vh;
+    animation-range-end: contain 20vh;
+}
+.scroll-reveal p span {
+    animation-range-start: contain 0vh;
+    animation-range-end: contain 30vh;
+}
+*/
+.spalte{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.spalte1{
+    width: 70vw;
+    animation: zoom-out linear;
+    animation-timeline: view(block);
+    animation-range: cover 60% cover 100%;
+}
+.abb1{
+    width: 60vw;
+    position: relative;
+    margin-right: 0;
+    max-height: 50vw;
+}
+.first-child{
+    display: flex;
+}
+.rechtsbuendig{
+    text-align: right;
+}
+.font2{
+    font-family: playfair;
+    font-weight: 90;
+}
+.information{
+    transform: translateX(60px);
+    z-index: 1;
+}
+.sehr-gross{
+    font-size: 10vw;
+}
