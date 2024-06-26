@@ -27,8 +27,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
-    width: 100vw;
-    overflow-x: hidden;
+    max-width: 100vw;
 }
 p{
     font-size: calc(15px + 0.390625vw);
@@ -258,4 +257,9 @@ h2{
 }
 .sehr-gross{
     font-size: 10vw;
+}
+.parent{
+    position: relative;
+    overflow: hidden;
+    display: flex;
 }
