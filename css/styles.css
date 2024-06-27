@@ -27,6 +27,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
+    position: relative;
     max-width: 100vw;
 }
 p{
@@ -40,7 +41,14 @@ h2{
 }
 
 @keyframes flyout{
-    to{
+    0%{
+        rotate: 0deg;
+        margin-left: 0vw;
+        transform: translateY(-0vh);
+        opacity: 1;
+        scale: 1 1;
+    }
+    100%{
         rotate: 30deg;
         margin-left: 100vw;
         transform: translateY(-10vh);
