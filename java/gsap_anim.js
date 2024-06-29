@@ -38,12 +38,7 @@ gsap.fromTo(".zoom-in", {
 	repeat: -1,
 })
 
-gsap.to(".rotating-star", {
-	duration: 5,
-	rotate: 360,
-	repeat: -1,
-	ease: "none",
-})
+
   
 
 
@@ -60,18 +55,63 @@ gsap.to(".content", {
     scale: 1.5,
 })
 
+
 gsap.to(".rotating-star", {
-	scrollTrigger: {
-		trigger: ".rotating-star",
-		start: "center 62%",
-		end: "bottom 10px",
-		scrub: 1,
-	},
-	x: '-50vw',
-	duration: 8,
-    rotate: 360,
-    ease: "power4.out"
+	duration: 5,
+	rotate: 360,
+	repeat: -1,
+	ease: "none",
+   
 })
+
+
+    gsap.to(".rotating-star", {
+        scrollTrigger: {
+            trigger: ".rotating-star",
+            start: "center 50%",
+            end: "center 10px",
+            scrub: 0.5,
+            markers: true,
+        },
+        x: '-40vw',
+        y: -100,
+        duration: 2,
+        ease: "power4.out",
+    })
+
+gsap.to(".scale-up", {
+    scrollTrigger: {
+        trigger: ".scale-up",
+        start: "top 70%",
+        end: "bottom 0%",
+        scrub: 1,
+    },
+    scale: 2,
+    duration: 3,
+})
+
+gsap.from(".reveal-right", {
+    scrollTrigger: {
+        trigger: ".reveal-right",
+        start: "top 90%",
+        end: "center 65%",
+        scrub: 1,
+    },
+    x: '60vw',
+    duration: 4,
+})
+
+gsap.from(".reveal-left", {
+    scrollTrigger: {
+        trigger: ".reveal-right",
+        start: "top 70%",
+        end: "center 60%",
+        scrub: 1,
+    },
+    x: '-50vw',
+    duration: 4,
+})
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	gsap.registerPlugin()
