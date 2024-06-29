@@ -39,7 +39,7 @@ h1{
 h2{
     font-size: 5vw;
 }
-
+/*
 @keyframes flyout{
     0%{
         rotate: 0deg;
@@ -147,7 +147,10 @@ h2{
     overflow: hidden;
 }
 .flex-element{
-    flex: 0;
+    display: flex;
+}
+.block-element{
+    display: block;
 }
 .verkleinert{
     font-size: x-large;
@@ -270,4 +273,7 @@ h2{
     position: relative;
     overflow: hidden;
     display: flex;
+}
+.from-left{
+    text-align: left;
 }
