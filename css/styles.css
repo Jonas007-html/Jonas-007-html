@@ -74,13 +74,14 @@ h2{
         scale: 2;
     }
 }
+    
 @keyframes rotate{
     0%{
         scale: 1.2;
     }
     50%{
         rotate: 180deg;
-        scale: .5;
+        scale: .8;
     }
     100%{
         rotate: 360deg;
