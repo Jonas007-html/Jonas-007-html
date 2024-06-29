@@ -71,7 +71,6 @@ gsap.to(".rotating-star", {
             start: "center 50%",
             end: "center 10px",
             scrub: 0.5,
-            markers: true,
         },
         x: '-40vw',
         y: -100,
