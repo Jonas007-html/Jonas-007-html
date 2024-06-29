@@ -51,7 +51,6 @@ gsap.to(".content", {
 		trigger: ".content",
 		start: "center 50%",
 		end: "bottom 10px",
-		markers: true,
 		scrub: 1,
 	},
 	x: '50vw',
@@ -63,9 +62,8 @@ gsap.to(".content", {
 gsap.to(".rotating-star", {
 	scrollTrigger: {
 		trigger: ".rotating-star",
-		start: "center 50%",
+		start: "center 62%",
 		end: "bottom 10px",
-		markers: true,
 		scrub: 1,
 	},
 	x: '-50vw',
