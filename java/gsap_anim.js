@@ -44,6 +44,7 @@ gsap.to(".rotating-star", {
 	repeat: -1,
 	ease: "none",
 })
+  
 
 
 gsap.to(".content", {
