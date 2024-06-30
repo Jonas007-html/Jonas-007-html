@@ -1,6 +1,3 @@
-
-
-
 //const right = document.querySelectorAll(".from-right");
 //const left = document.querySelectorAll(".from-left");
 //const zoom = document.querySelectorAll(".zoom-in");
@@ -12,36 +9,38 @@ gsap.from(".from-left", {
 	duration: 2.5,
 	x: '-100vw',
 	ease: "power4.out",
-	stagger: 0.2,
+	stagger: 0.4,
 })
-
-
 gsap.from(".from-right", {
 	duration: 2.5,
 	x: '100vw',
 	ease: "power4.out",
 })
-gsap.set(".zoom-in", {
-	scale: 0,
+let tl = gsap.timeline({})
+tl.set(".zoom-in", {
+    opacity: 0,
+    scale: 0,
 })
-gsap.fromTo(".zoom-in", {
-	scale: 0,
-	duration: 2.5,
-	delay: 1,
-	yoyo: (true),
-	repeat: -1,
-},{
-	scale: 1,
-	duration: 2.5,
-	delay: 1,
-	yoyo: (true),
-	repeat: -1,
+tl.to(".zoom-in", {
+    scale: 1,
+    duration: 2.5,
+    delay: 1,
+    opacity: 1,
 })
-
-
-  
-
-
+tl.to(".flyout-left", {
+    scrollTrigger: {
+        trigger: ".flyout-left",
+        start: "center 50%",
+        end: "center 0px",
+        scrub: 0.5,
+    },
+    
+    x: '-35vw',
+    y: -100,
+    duration: 2,
+    ease: "power4.out",
+    scale: 2,
+})
 gsap.to(".content", {
 	scrollTrigger: {
 		trigger: ".content",
@@ -54,8 +53,6 @@ gsap.to(".content", {
     rotate: 20,
     scale: 1.5,
 })
-
-
 gsap.to(".rotating-star", {
 	duration: 5,
 	rotate: 360,
@@ -63,21 +60,6 @@ gsap.to(".rotating-star", {
 	ease: "none",
    
 })
-
-
-    gsap.to(".rotating-star", {
-        scrollTrigger: {
-            trigger: ".rotating-star",
-            start: "center 50%",
-            end: "center 10px",
-            scrub: 0.5,
-        },
-        x: '-40vw',
-        y: -100,
-        duration: 2,
-        ease: "power4.out",
-    })
-
 gsap.to(".scale-up", {
     scrollTrigger: {
         trigger: ".scale-up",
@@ -88,7 +70,6 @@ gsap.to(".scale-up", {
     scale: 2,
     duration: 3,
 })
-
 gsap.from(".reveal-right", {
     scrollTrigger: {
         trigger: ".reveal-right",
@@ -99,7 +80,6 @@ gsap.from(".reveal-right", {
     x: '60vw',
     duration: 4,
 })
-
 gsap.from(".reveal-left", {
     scrollTrigger: {
         trigger: ".reveal-right",
@@ -110,8 +90,6 @@ gsap.from(".reveal-left", {
     x: '-50vw',
     duration: 4,
 })
-
-
 document.addEventListener('DOMContentLoaded', () => {
 	gsap.registerPlugin()
 	// gsap code here
