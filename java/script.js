@@ -27,7 +27,7 @@ document.addEventListener("mousemove", (e) => {
 Observer.create({
 	target: window,
 	type: "touch, pointer",
-	onMove: () => {
+	onDrag: () => {
 		document.addEventListener("mousemove", (e) => {
 			gsap.to(cursor, {
 				x: e.clientX - cursor.offsetWidth / 1.94,
