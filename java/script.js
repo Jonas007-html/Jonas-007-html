@@ -27,12 +27,12 @@ document.addEventListener("mousemove", (e) => {
 Observer.create({
 	target: window,
 	type: "touch, pointer",
-	onChange: () => {
+	onMove: () => {
 		document.addEventListener("mousemove", (e) => {
 			gsap.to(cursor, {
 				x: e.clientX - cursor.offsetWidth / 1.94,
 				y: e.clientY - cursor.offsetHeight / 2.15,
-				duration: .9,
+				duration: 1.1,
 				ease: "power2.out",
 			});
 		});
