@@ -29,6 +29,7 @@ html{
 body{
     position: relative;
     max-width: 100vw;
+    overflow-x: hidden;
 }
 p{
     font-size: calc(15px + 0.390625vw);
