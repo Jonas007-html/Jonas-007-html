@@ -24,6 +24,7 @@ document.addEventListener("mousemove", (e) => {
 	});
 });
 //gsap animations
+/*
 Observer.create({
 	target: window,
 	type: "touch, pointer",
@@ -37,4 +38,4 @@ Observer.create({
 			});
 		});
 	}
-})
+})*/
