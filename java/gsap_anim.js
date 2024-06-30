@@ -95,6 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// gsap code here
 	
 })
-
+if (ScrollTrigger.isTouch === 1) {
+    const element = document.getElementById("demo");
+    element.remove();
+  }
 
       
