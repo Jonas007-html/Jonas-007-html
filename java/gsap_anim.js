@@ -3,7 +3,7 @@
 //const zoom = document.querySelectorAll(".zoom-in");
 //const rotate = document.querySelectorAll(".rotating-star");
 //const fly_right = document.querySelectorAll(".content");
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Observer);
 
 gsap.from(".from-left", {
 	duration: 2.5,
@@ -90,14 +90,32 @@ gsap.from(".reveal-left", {
     x: '-50vw',
     duration: 4,
 })
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
 	gsap.registerPlugin()
 	// gsap code here
 	
-})
+})*/
+// detect if touch or not => display moving star or not
 if (ScrollTrigger.isTouch === 1) {
     const element = document.getElementById("demo");
     element.remove();
   }
+  //
+gsap.to(".top-left", {
+	scrollTrigger: {
+		trigger: ".top-left",
+		start: "center 10%",
+		end: "bottom 0px",
+		scrub: 2,
+	},
+	duration: 2,
+    rotate: 90,
+    scale: .5,
+    y: '-30%',
+})
 
-      
+/*gsap.to(".top-left", {
+            rotate: 360,
+            opacity: 0,
+            duration: 3,
+        }),*/

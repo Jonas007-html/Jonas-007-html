@@ -1,3 +1,4 @@
 1. smooth scrolling
 2. light / dark mode
-3. 
+3. different nav design
+4. responsive
