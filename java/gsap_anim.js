@@ -11,11 +11,29 @@ gsap.from(".from-left", {
 	ease: "power4.out",
 	stagger: 0.4,
 })
-gsap.from(".from-right", {
+
+let tl2 = gsap.timeline({});
+tl2.set(".from-right", {
+    x: '100vw',
+})
+tl2.to(".from-right", {
 	duration: 2.5,
-	x: '100vw',
+	x: '50%' - '25%',
 	ease: "power4.out",
 })
+tl2.to(".flyout-left", {
+    scrollTrigger: {
+        trigger: ".flyout-left",
+        start: "center 40%",
+        end: "center 20%",
+        scrub: 2,
+        markers: true,
+    },
+    x: '-100vw',
+    ease: "power4.out",
+})
+
+/*
 let tl = gsap.timeline({})
 tl.set(".zoom-in", {
     opacity: 0,
@@ -41,17 +59,15 @@ tl.to(".flyout-left", {
     ease: "power4.out",
     scale: 2,
 })
+*/
 gsap.to(".content", {
 	scrollTrigger: {
 		trigger: ".content",
 		start: "center 50%",
 		end: "bottom 10px",
 		scrub: 1,
+        pin: true,
 	},
-	x: '50vw',
-	duration: 2,
-    rotate: 20,
-    scale: 1.5,
 })
 gsap.to(".rotating-star", {
 	duration: 5,
@@ -90,11 +106,7 @@ gsap.from(".reveal-left", {
     x: '-50vw',
     duration: 4,
 })
-/*document.addEventListener('DOMContentLoaded', () => {
-	gsap.registerPlugin()
-	// gsap code here
-	
-})*/
+
 // detect if touch or not => display moving star or not
 if (ScrollTrigger.isTouch === 1) {
     const element = document.getElementById("demo");
@@ -114,8 +126,3 @@ gsap.to(".top-left", {
     y: '-30%',
 })
 
-/*gsap.to(".top-left", {
-            rotate: 360,
-            opacity: 0,
-            duration: 3,
-        }),*/
