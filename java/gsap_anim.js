@@ -5,12 +5,7 @@
 //const fly_right = document.querySelectorAll(".content");
 gsap.registerPlugin(ScrollTrigger, Observer);
 
-gsap.from(".from-left", {
-	duration: 2.5,
-	x: '-100vw',
-	ease: "power4.out",
-	stagger: 0.4,
-})
+
 
 let tl2 = gsap.timeline({});
 tl2.set(".from-right", {
@@ -26,13 +21,38 @@ tl2.to(".flyout-left", {
         trigger: ".flyout-left",
         start: "center 40%",
         end: "center 20%",
-        scrub: 2,
-        markers: true,
+        scrub: 1,
     },
-    x: '-100vw',
+    x: '-75vw',
     ease: "power4.out",
+    duration: 2,
 })
 
+let tl3 = gsap.timeline({});
+tl3.set(".from-left", {
+	x: '-100vw',
+})
+tl3.to(".from-left", {
+	duration: 2.5,
+	x: '50%' - '25%',
+	ease: "power4.out",
+    stagger: .4,
+})
+let h = window.innerHeight;
+function mitte(){
+    height =  window.innerHeight 
+};
+console.log(mitte());
+tl3.to(".flyout-right", {
+    scrollTrigger: {
+        trigger: ".flyout-right",
+        start: "top 25%",
+        end: "bottom 5%",
+        scrub: 1,
+    },
+    x: '59vw',
+    ease: "power4.out",
+})
 /*
 let tl = gsap.timeline({})
 tl.set(".zoom-in", {
@@ -64,7 +84,7 @@ gsap.to(".content", {
 	scrollTrigger: {
 		trigger: ".content",
 		start: "center 50%",
-		end: "bottom 10px",
+		end: "center 30%",
 		scrub: 1,
         pin: true,
 	},
