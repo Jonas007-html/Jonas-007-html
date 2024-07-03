@@ -5,15 +5,14 @@
 //const fly_right = document.querySelectorAll(".content");
 gsap.registerPlugin(ScrollTrigger, Observer);
 
-
-
+//Nell Beruning
 let tl2 = gsap.timeline({});
 tl2.set(".from-right", {
-    x: '100vw',
+    x: '50vw',
 })
 tl2.to(".from-right", {
-	duration: 2.5,
 	x: '50%' - '25%',
+    duration: 2.5,
 	ease: "power4.out",
 })
 tl2.to(".flyout-left", {
@@ -27,7 +26,7 @@ tl2.to(".flyout-left", {
     ease: "power4.out",
     duration: 2,
 })
-
+// Oswald von und Schule
 let tl3 = gsap.timeline({});
 tl3.set(".from-left", {
 	x: '-100vw',
@@ -86,9 +85,9 @@ gsap.to(".content", {
 		start: "center 50%",
 		end: "center 30%",
 		scrub: 1,
-        pin: true,
 	},
 })
+/*
 gsap.to(".rotating-star", {
 	duration: 5,
 	rotate: 360,
@@ -96,6 +95,7 @@ gsap.to(".rotating-star", {
 	ease: "none",
    
 })
+    */
 gsap.to(".scale-up", {
     scrollTrigger: {
         trigger: ".scale-up",
@@ -103,9 +103,10 @@ gsap.to(".scale-up", {
         end: "bottom 0%",
         scrub: 1,
     },
-    scale: 2,
+    scale: 1.7,
     duration: 3,
 })
+
 gsap.from(".reveal-right", {
     scrollTrigger: {
         trigger: ".reveal-right",
@@ -142,7 +143,6 @@ gsap.to(".top-left", {
 	},
 	duration: 2,
     rotate: 90,
-    scale: .5,
-    y: '-30%',
+    scale: .4,
+    y: '-35%',
 })
-
