@@ -212,16 +212,16 @@ h2{
 .link-element{
     width: 100%;
     text-align: center;
-    height: 20%;
+    height: 14.3%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgb(26, 152, 178) 100%);
+    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,53,121,1) 64%, rgba(0,57,255,1) 100%);
 
 }
 .link-element a{
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .menu-icon-container{
     right: 7%;
