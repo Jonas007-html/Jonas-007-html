@@ -119,7 +119,7 @@ gsap.from(".reveal-right", {
 })
 gsap.from(".reveal-left", {
     scrollTrigger: {
-        trigger: ".reveal-right",
+        trigger: ".reveal-left",
         start: "top 70%",
         end: "center 60%",
         scrub: 1,
@@ -210,5 +210,7 @@ menu.addEventListener('click', () => {
 menu.addEventListener('click', () => {
     menu.classList.add(navigation_back());
 });
+
+
 
 
