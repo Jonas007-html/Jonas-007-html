@@ -146,3 +146,34 @@ gsap.to(".top-left", {
     scale: .4,
     y: '-35%',
 })
+
+gsap.set (".menu-list-container", {
+    xPercent: 100, 
+    opacity: 1,
+})
+
+function navigation () {
+    let animNav = gsap.to(".menu-list-container", {
+        xPercent: -0,
+        duration: .9,
+        ease: "power3.out",
+    });
+}
+
+function navigation_back () {
+    let animNav = gsap.to(".menu-list-container", {
+        xPercent: 100,
+        duration: .9,
+        ease: "power3.out",
+    });
+}
+
+const menuBtn = document.querySelector('#menu-btn');
+const menu = document.querySelector('#menu');
+
+menuBtn.addEventListener('click', () => {
+    menu.classList.add(navigation());
+});
+menu.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});

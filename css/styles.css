@@ -21,7 +21,6 @@ html{
   background: black;
   cursor: none !important;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 body{
@@ -38,63 +37,6 @@ h1{
 h2{
     font-size: 5vw;
 }
-/*
-@keyframes flyout{
-    0%{
-        rotate: 0deg;
-        margin-left: 0vw;
-        transform: translateY(-0vh);
-        opacity: 1;
-        scale: 1 1;
-    }
-    100%{
-        rotate: 30deg;
-        margin-left: 100vw;
-        transform: translateY(-10vh);
-        opacity: .5;
-        scale: 2 2;
-        display: none;
-        overflow: hidden;
-    }
-}
-@keyframes flyout-left{
-    to{
-        rotate: 30deg;
-        margin-left: -50vw;
-        transform: translateY(-10vh);
-        opacity: .5;
-        scale: 2 2;
-        display: none;
-        overflow: hidden;
-    }
-}
-@keyframes zoom-out{
-    to{
-        scale: 2;
-    }
-}
-    
-@keyframes rotate{
-    0%{
-        scale: 1.2;
-    }
-    50%{
-        rotate: 180deg;
-        scale: .8;
-    }
-    100%{
-        rotate: 360deg;
-        scale: 1.2;
-    }
-}
-/* Scroll reveal
-@keyframes scroll-reveal{
-    to{
-        background-size: 100% 100%
-    }
-}
-*/
-
 .mix-blend-mode{
     mix-blend-mode: difference;
 }
@@ -177,25 +119,14 @@ h2{
     margin: 10px;
     cursor: none;
 }
-/*
-.adresse{
-    margin-top: 10px;
-    margin-left: 50px;
-    text-align: center;
-    max-width: 50vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-*/
 .backlayer{
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: -1;
+    z-index: 1000000;
     position: fixed;
     top: 0;
+    pointer-events: none;
 }
 
 .padding{
@@ -217,25 +148,6 @@ h2{
     animation: rotate 9s linear infinite;
     transform-origin: 50% 50%;
 }
-/* Scroll reveal
-.scroll-reveal span {
-    color: hsl(0 0% 100% / 0.2);
-    background-clip: text;
-    background-image: linear-gradient(90deg, red, blue);
-    background-repeat: no-repeat;
-    background-size: 0% 100%;
-    animation: scroll-reveal linear forwards;
-    animation-timeline: view();
-}
-.scroll-reveal h1 span {
-    animation-range-start: contain 10vh;
-    animation-range-end: contain 20vh;
-}
-.scroll-reveal p span {
-    animation-range-start: contain 0vh;
-    animation-range-end: contain 30vh;
-}
-*/
 .spalte{
     width: 100vw;
     display: flex;
@@ -285,4 +197,22 @@ h2{
 }
 .logo-icon{
     width: 13vw;
+}
+.menu-list-container{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rebeccapurple;
+    z-index: 1;
+    opacity: 0;
+}
+.menu-icon-container{
+    right: 10%;
+    top: 20px;
+    position: fixed;
+    z-index: 1;
+    opacity: 1;
 }

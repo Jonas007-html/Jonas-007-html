@@ -11,26 +11,49 @@
     </style>
 </head>
 <body data-smooth-scroll="true" data-scroll-container>
+    <div class="backlayer mix-blend-mode" id="demo">
+        <div class="cursor mix-blend-mode">
+            <img src="/img/Star1filled.svg" class="cursor-img mix-blend-mode">
+        </div>
+        <div class="mouse mix-blend-mode">
+            <img src="/img/Ellipse1.svg" class="mouse-img mix-blend-mode">
+        </div>
+    </div> 
+    
     <header>
         <a href="index.html">
             <div class="section mix-blend-mode top-left">
                 <img src="/img/logo-svg.svg" alt="logo" class="logo-icon">
             </div>
         </a>
-        <div class="nav mix-blend-mode">
+    <!--<div class="nav mix-blend-mode">
             <a href="#" class="nav-link">[ <span class="nav-link">Wer wir sind</span> ]</a>
             <a href="#" class="nav-link">[ <span class="nav-link">Contact</span> ]</a>
-            <a href="#" class="nav-link">[ <span class="nav-link">Dokumente</span> ]</a>
-        </div>
+            <a href="#" class="nav-link">[ <span class="nav-link">Dokumente</span> ]  onclick="navigation()"  </a>
+        </div>-->
+        <nav>
+            <div class="menu-icon-container" id="menu-btn">
+                <p>options</p>
+            </div>
+            <div class="menu-list-container" id="menu">
+                <ul class="menu-options">
+                    <li><a href="#">Option 1</a></li>
+                    <li><a href="#">Option 2</a></li>
+                    <li><a href="#">Option 3</a></li>
+                    <li><a href="#">Option 4</a></li>
+                    <li><a href="#">Option 5</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
-            <div class="relative">
-                <div class="content section mix-blend-mode flex-element">
-                    <p class="from-left block-element flyout-right">Oswald von</p>
-                    <h1 class="from-right block-element flyout-left">Nell Breuning</h1>
-                    <h2 class="from-left block-element flyout-right">Schule</h2>
-                </div>
+        <div class="relative">
+            <div class="content section mix-blend-mode flex-element">
+                <p class="from-left block-element flyout-right">Oswald von</p>
+                <h1 class="from-right block-element flyout-left">Nell Breuning</h1>
+                <h2 class="from-left block-element flyout-right">Schule</h2>
             </div>
+        </div>
             <!--
         <div class="rotating-star zoom-in flyout-left" data-scroll data-scroll-direction="vertical" data-scroll-speed="-5" data-scroll-class="appear" data-scroll-repeat="true">
             <img src="/img/Star2.svg" alt="" class="rotate"> 
@@ -48,14 +71,7 @@
                 <p class="padding section">Servus meine Freunde ich bin in Bayern endlich angekommen, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
             </div>
     </main>
-    <div class="backlayer mix-blend-mode" id="demo">
-        <div class="cursor mix-blend-mode"  onmousemove="mouseMove(e)">
-            <img src="/img/Star1filled.svg" class="cursor-img mix-blend-mode">
-        </div>
-        <div class="mouse mix-blend-mode">
-            <img src="/img/Ellipse1.svg" class="mouse-img mix-blend-mode">
-        </div>
-    </div>  
+     
     
     <script src="/java/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
