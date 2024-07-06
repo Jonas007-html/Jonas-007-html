@@ -212,7 +212,7 @@ h2{
 .link-element{
     width: 100%;
     text-align: center;
-    height: 14.3%;
+    height: 14.28571428571429%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +221,7 @@ h2{
 }
 .link-element a{
     text-align: center;
-    font-size: 4rem;
+    font-size: clamp(1.875rem, 1.7772rem + 0.7826vw, 3rem);
 }
 .menu-icon-container{
     right: 7%;
