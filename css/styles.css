@@ -205,14 +205,28 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rebeccapurple;
-    z-index: 1;
-    opacity: 0;
+    z-index: 10;
+    opacity: 0.5;
+    flex-direction: column;
+}
+.link-element{
+    width: 100%;
+    text-align: center;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgb(26, 152, 178) 100%);
+
+}
+.link-element a{
+    text-align: center;
+    font-size: 5rem;
 }
 .menu-icon-container{
-    right: 10%;
+    right: 7%;
     top: 20px;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     opacity: 1;
 }

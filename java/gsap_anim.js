@@ -147,33 +147,68 @@ gsap.to(".top-left", {
     y: '-35%',
 })
 
+gsap.set (".link-element", {
+    xPercent: 100, 
+    opacity: 1,
+})
+
 gsap.set (".menu-list-container", {
     xPercent: 100, 
     opacity: 1,
 })
 
 function navigation () {
-    let animNav = gsap.to(".menu-list-container", {
+    gsap.to(".menu-list-container", {
         xPercent: -0,
         duration: .9,
         ease: "power3.out",
+        stagger: .3,
     });
 }
 
-function navigation_back () {
-    let animNav = gsap.to(".menu-list-container", {
+function navigation_staggered_links () {
+    gsap.to(".link-element", {
+        xPercent: -0,
+        duration: .9,
+        ease: "power3.out",
+        stagger: 0.2,
+    });
+}
+
+function navigation_staggered_links_back () {
+    gsap.to(".link-element", {
         xPercent: 100,
         duration: .9,
         ease: "power3.out",
+        stagger: 0.2,
+    });
+}
+
+
+function navigation_back () {
+    gsap.to(".menu-list-container", {
+        xPercent: 100,
+        duration: 0,
+        ease: "power3.out",
+        delay: 1.5,
     });
 }
 
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
+const link = document.querySelector('#link-element');
 
+menuBtn.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links());
+});
 menuBtn.addEventListener('click', () => {
     menu.classList.add(navigation());
 });
 menu.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+menu.addEventListener('click', () => {
     menu.classList.add(navigation_back());
 });
+
+
