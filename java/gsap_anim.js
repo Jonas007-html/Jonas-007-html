@@ -146,7 +146,7 @@ gsap.to(".top-left", {
     scale: .4,
     y: '-35%',
 })
-
+// menu animations and functions
 gsap.set (".link-element", {
     xPercent: 100, 
     opacity: 1,
@@ -194,9 +194,18 @@ function navigation_back () {
     });
 }
 
+function ReWrite () {
+gsap.from(".margin-aside", {
+    duration: 0.5, 
+    text: "",
+    delay: 1,
+    stagger: .2,
+})
+}
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const link = document.querySelector('#link-element');
+const reWrite = document.querySelector('.margin-aside')
 
 menuBtn.addEventListener('click', () => {
     link.classList.add(navigation_staggered_links());
@@ -204,13 +213,16 @@ menuBtn.addEventListener('click', () => {
 menuBtn.addEventListener('click', () => {
     menu.classList.add(navigation());
 });
+menuBtn.addEventListener('click', () => {
+    reWrite.classList.add(ReWrite());
+});
 menu.addEventListener('click', () => {
     link.classList.add(navigation_staggered_links_back());
 });
 menu.addEventListener('click', () => {
     menu.classList.add(navigation_back());
 });
-
+// end menu design and functionality
 
 
 
