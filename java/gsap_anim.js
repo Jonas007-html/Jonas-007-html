@@ -205,7 +205,7 @@ gsap.from(".margin-aside", {
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const link = document.querySelector('#link-element');
-const reWrite = document.querySelector('.margin-aside')
+const reWrite = document.querySelector('.margin-aside');
 
 menuBtn.addEventListener('click', () => {
     link.classList.add(navigation_staggered_links());
@@ -223,6 +223,8 @@ menu.addEventListener('click', () => {
     menu.classList.add(navigation_back());
 });
 // end menu design and functionality
-
-
+//start of open links over js with delay
+function openW3Schools () {
+    var myWindow = window.open("https://www.w3schools.com/jsref/met_win_open.asp", "_self");
+}
 

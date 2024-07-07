@@ -117,7 +117,8 @@ h2{
     margin: 0px;
 }
 .nav-link span:hover{
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     cursor: none;
 }
 .backlayer{
@@ -195,6 +196,7 @@ h2{
     margin-left: 5vw;
     margin-top: 2vh;
     position: fixed;
+    z-index: 10000000;
 }
 .logo-icon{
     width: 13vw;
@@ -223,6 +225,7 @@ h2{
 .link-element a{
     text-align: center;
     font-size: clamp(1.875rem, 1.7772rem + 0.7826vw, 3rem);
+    display: flex;
 }
 .menu-icon-container{
     right: 7%;
@@ -230,4 +233,14 @@ h2{
     position: fixed;
     z-index: 10;
     opacity: 1;
+}
+.link-element,
+.menu-list-container{
+    opacity: 0;
+}
+.number-before{
+    position:relative;
+    font-size: x-small;
+    top: 10;
+
 }
