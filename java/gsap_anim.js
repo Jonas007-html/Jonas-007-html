@@ -223,6 +223,7 @@ const links13 = document.querySelector(".clickOnMe13");
 // ende
 const reWrite = document.querySelector('.margin-aside');
 
+
 menuBtn.addEventListener('click', () => {
     link.classList.add(navigation_staggered_links());
 });
@@ -337,3 +338,59 @@ function openW3Schools () {
     var myWindow = window.open("https://www.w3schools.com/jsref/met_win_open.asp", "_self");
 }
 
+function openHome () {
+    var myWindow = window.open("https://jonas007-html.github.io", "_self");
+}
+// end links
+//start overlay
+const verlinkung1 = document.querySelector('.nav-link1');
+const verlinkung2 = document.querySelector('.nav-link2');
+const verlinkung3 = document.querySelector('.nav-link3');
+const verlinkung4 = document.querySelector('.nav-link4');
+const verlinkung5 = document.querySelector('.nav-link5');
+const square = document.querySelector('.square');
+
+    gsap.to(".square", {
+        duration: .6,
+        opacity: 0,
+        scale: .1,
+        stagger: {
+            amount: 1.8,
+            from: "random",
+            grid: [8, 8],
+        },
+        ease: "power1.out",
+        delay: .5,
+    })
+
+    function startOverlay () {
+        gsap.to(".square", {
+            duration: .6,
+            opacity: 1,
+            scale: 1.1,
+            stagger: {
+                amount: 1.8,
+                from: "random",
+                grid: [8, 8],
+            },
+            ease: "power1.out",
+        })
+    }
+
+    verlinkung1.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    });
+    verlinkung2.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    });
+    verlinkung3.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    });
+    verlinkung4.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    });
+    verlinkung5.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    });
+    
+// end overlay
