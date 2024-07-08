@@ -351,11 +351,11 @@ const verlinkung5 = document.querySelector('.nav-link5');
 const square = document.querySelector('.square');
 
     gsap.to(".square", {
-        duration: .6,
+        duration: .5,
         opacity: 0,
         scale: .1,
         stagger: {
-            amount: 1.8,
+            amount: .9,
             from: "random",
             grid: [8, 8],
         },
@@ -365,11 +365,11 @@ const square = document.querySelector('.square');
 
     function startOverlay () {
         gsap.to(".square", {
-            duration: .6,
+            duration: .5,
             opacity: 1,
             scale: 1.1,
             stagger: {
-                amount: 1.8,
+                amount: .9,
                 from: "random",
                 grid: [8, 8],
             },
