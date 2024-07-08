@@ -205,6 +205,22 @@ gsap.from(".margin-aside", {
 const menuBtn = document.querySelector('#menu-btn');
 const menu = document.querySelector('#menu');
 const link = document.querySelector('#link-element');
+// da query selector nicht für alle funktioniert jedes elemt einzeln ansteuern
+const links0 = document.querySelector(".clickOnMe0");
+const links1 = document.querySelector(".clickOnMe1");
+const links2 = document.querySelector(".clickOnMe2");
+const links3 = document.querySelector(".clickOnMe3");
+const links4 = document.querySelector(".clickOnMe4");
+const links5 = document.querySelector(".clickOnMe5");
+const links6 = document.querySelector(".clickOnMe6");
+const links7 = document.querySelector(".clickOnMe7");
+const links8 = document.querySelector(".clickOnMe8");
+const links9 = document.querySelector(".clickOnMe9");
+const links10 = document.querySelector(".clickOnMe10");
+const links11 = document.querySelector(".clickOnMe11");
+const links12 = document.querySelector(".clickOnMe12");
+const links13 = document.querySelector(".clickOnMe13");
+// ende
 const reWrite = document.querySelector('.margin-aside');
 
 menuBtn.addEventListener('click', () => {
@@ -216,12 +232,105 @@ menuBtn.addEventListener('click', () => {
 menuBtn.addEventListener('click', () => {
     reWrite.classList.add(ReWrite());
 });
-menu.addEventListener('click', () => {
+
+// always the same but other element
+links0.addEventListener('click', () => {
     link.classList.add(navigation_staggered_links_back());
 });
-menu.addEventListener('click', () => {
+links0.addEventListener('click', () => {
     menu.classList.add(navigation_back());
 });
+
+links1.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links1.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links2.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links2.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links3.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links3.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links4.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links4.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links5.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links5.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links6.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links6.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+links7.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links7.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links8.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links8.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links9.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links9.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links10.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links10.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links11.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links11.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links12.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links12.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+links13.addEventListener('click', () => {
+    link.classList.add(navigation_staggered_links_back());
+});
+links13.addEventListener('click', () => {
+    menu.classList.add(navigation_back());
+});
+
+
+
+
+
+
 // end menu design and functionality
 //start of open links over js with delay
 function openW3Schools () {

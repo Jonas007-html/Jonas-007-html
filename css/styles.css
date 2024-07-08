@@ -242,5 +242,8 @@ h2{
     position:relative;
     font-size: x-small;
     top: 10;
-
+}
+.clickOnMe{
+    width: 100%;
+    height: 100%;
 }
