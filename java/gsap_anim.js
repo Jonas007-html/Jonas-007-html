@@ -364,7 +364,8 @@ const square = document.querySelector('.square');
     })
 
     function startOverlay () {
-        gsap.to(".square", {
+        var zuUndAuf = gsap.timeline({});
+        zuUndAuf.to(".square", {
             duration: .5,
             opacity: 1,
             scale: 1.1,
@@ -374,7 +375,19 @@ const square = document.querySelector('.square');
                 grid: [8, 8],
             },
             ease: "power1.out",
+        });
+        zuUndAuf.to(".square", {
+            duration: .5,
+            opacity: 0,
+            scale: .1,
+            stagger: {
+                amount: .9,
+                from: "random",
+                grid: [8, 8],
+            },
+            ease: "power1.out",
         })
+
     }
 
     verlinkung1.addEventListener('click', () => {
