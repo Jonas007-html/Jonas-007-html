@@ -104,7 +104,7 @@ gsap.to(".scale-up", {
     scale: 1.7,
     duration: 3,
 })
-
+/*
 gsap.from(".reveal-right", {
     scrollTrigger: {
         trigger: ".reveal-right",
@@ -121,11 +121,12 @@ gsap.from(".reveal-left", {
         start: "top 70%",
         end: "center 60%",
         scrub: 1,
+        markers: true,
     },
     x: '-50vw',
     duration: 4,
 })
-
+*/
 // detect if touch or not => display moving star or not
 if (ScrollTrigger.isTouch === 1) {
     const element = document.getElementById("demo");
@@ -406,7 +407,7 @@ const square = document.querySelector('.square');
                 grid: [8, 8],
             },
             ease: "power1.out",
-            delay: 2,
+            delay: 1,
         })
 
     }

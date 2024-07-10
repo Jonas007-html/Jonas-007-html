@@ -143,10 +143,11 @@ h2{
     top: 0;
     pointer-events: none;
 }
-
+/*
 .padding{
     padding: 20px;
 }
+    */
 .rotating-star{
     position: absolute;
     mix-blend-mode: difference;
@@ -165,24 +166,35 @@ h2{
 }
 .spalte{
     width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: end;
+    position: absolute;
+    top: 0;
+
+    z-index: 10000000;
 }
 .spalte1{
-    width: 70vw;
-    animation: zoom-out linear;
-    animation-timeline: view(block);
-    animation-range: cover 60% cover 100%;
+    width: 40vw;
 }
+@media screen and (max-width: 800px) {
+    .spalte1{
+        width: 80vw;
+    }    
+}
+/*
 .abb1{
     width: 60vw;
     position: relative;
     margin-right: 0;
     max-height: 50vw;
-}
+}*/
+/*
 .first-child{
     display: flex;
 }
+    */
 .rechtsbuendig{
     text-align: right;
 }
@@ -190,13 +202,19 @@ h2{
     font-family: playfair;
     font-weight: 90;
 }
-.information{
+/*
+.information h1{
     transform: translateX(60px);
-    z-index: 1;
+    z-index: 2000;
+    position: relative;
 }
 .sehr-gross{
     font-size: 10vw;
 }
+.reveal-right{
+    z-index: -1;
+}
+    */
 .parent{
     position: relative;
     overflow: hidden;
