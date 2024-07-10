@@ -38,6 +38,19 @@ h2{
     font-size: 5vw;
 }
 
+
+@media screen and (max-width: 500px) {
+    p.from-left{
+        font-size: 6vw;
+    }
+    h1.from-right{
+        font-size: 12vw;
+    }
+    h2.from-left{
+        font-size: 8vw;
+    }
+  }
+
 .mix-blend-mode{
     mix-blend-mode: difference;
 }
@@ -200,6 +213,7 @@ h2{
 }
 .logo-icon{
     width: 13vw;
+    min-width: 7vh;
 }
 .menu-list-container{
     width: 100vw;

@@ -131,11 +131,33 @@ if (ScrollTrigger.isTouch === 1) {
     const element = document.getElementById("demo");
     element.remove();
   }
-  //
+  // end
+// logo animation je nach display größe
+  let mm = gsap.matchMedia();
+  mm.add({
+      isMobile: "(max-width: 500px)",
+      isDesktop: "(min-width: 501px)",
+  }, (context) => {
+      let { isMobile, isDesktop } = context.conditions;
+
+      gsap.to(".top-left", {
+        scrollTrigger: {
+            trigger: ".top-left",
+            start: "center 7%",
+            end: "bottom 0px",
+            scrub: 2,
+        },
+        duration: 2,
+        rotate: 90,
+        scale: isDesktop ? .4 : .7,
+        y: isDesktop ? '-35%' : '-20%',
+    })
+  })
+/*
 gsap.to(".top-left", {
 	scrollTrigger: {
 		trigger: ".top-left",
-		start: "center 10%",
+		start: "center 7%",
 		end: "bottom 0px",
 		scrub: 2,
 	},
@@ -143,7 +165,7 @@ gsap.to(".top-left", {
     rotate: 90,
     scale: .4,
     y: '-35%',
-})
+})*/
 // menu animations and functions
 gsap.set (".link-element", {
     xPercent: 100, 
@@ -384,6 +406,7 @@ const square = document.querySelector('.square');
                 grid: [8, 8],
             },
             ease: "power1.out",
+            delay: 2,
         })
 
     }
