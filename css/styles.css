@@ -11,11 +11,11 @@
 }
 @font-face {
     font-family: poppins-regular;
-    src: url(/fonts/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins-Regular.ttf);
 }
 @font-face {
     font-family: playfair;
-    src: url(/fonts/PlayfairDisplay-Italic.ttf);
+    src: url(../fonts/PlayfairDisplay-Italic.ttf);
 }
 html{
   background: black;
