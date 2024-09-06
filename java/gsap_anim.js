@@ -3,8 +3,9 @@
 //const zoom = document.querySelectorAll(".zoom-in");
 //const rotate = document.querySelectorAll(".rotating-star");
 //const fly_right = document.querySelectorAll(".content");
-gsap.registerPlugin(ScrollTrigger, Observer);
+//gsap.registerPlugin(ScrollTrigger, Observer,);
 
+gsap.registerPlugin(ScrollTrigger,Observer);
 //Nell Beruning
 /*
 let tl2 = gsap.timeline({});
@@ -134,6 +135,7 @@ if (ScrollTrigger.isTouch === 1) {
   }
   // end
 // logo animation je nach display größe
+/*
   let mm = gsap.matchMedia();
   mm.add({
       isMobile: "(max-width: 500px)",
@@ -154,6 +156,7 @@ if (ScrollTrigger.isTouch === 1) {
         y: isDesktop ? '-35%' : '-20%',
     })
   })
+    */
 /*
 gsap.to(".top-left", {
 	scrollTrigger: {
@@ -360,10 +363,11 @@ function openW3Schools () {
 }
 
 function openHome () {
-    var myWindow = window.open("https://jonas007-html.github.io", "_self");
+    var myWindow = window.open("index.html", "_self");
 }
 // end links
 //start overlay
+const verlinkungIcon = document.querySelector('.top-left');
 const verlinkung1 = document.querySelector('.nav-link1');
 const verlinkung2 = document.querySelector('.nav-link2');
 const verlinkung3 = document.querySelector('.nav-link3');
@@ -427,5 +431,127 @@ const square = document.querySelector('.square');
     verlinkung5.addEventListener('click', () => {
         square.classList.add(startOverlay());
     });
+    verlinkungIcon.addEventListener('click', () => {
+        square.classList.add(startOverlay());
+    })
     
 // end overlay
+
+// start fade text up
+    var headlineContent = document.getElementById('main-header');
+    headlineContent.innerHTML = "<span class='new'>" +
+    headlineContent.innerHTML.split("").join("</span><span class='new'>") + "</span>"
+    var headChar = document.getElementsByClassName("new");
+    gsap.from(headChar, {
+        yPercent: 100,
+        stagger: .07,
+        duration: 2,
+        delay: 1,
+        ease: "power4.out"
+    });
+
+    var headerAdd1 = document.getElementById('header-add1');
+    headerAdd1.innerHTML = "<span class='char1'>" +
+    headerAdd1.innerHTML.split("").join("</span><span class='char1'>") + "</span>"
+    var char1 = document.getElementsByClassName('char1');
+    gsap.from(char1, {
+        yPercent: 100,
+        stagger: .07,
+        duration: 2,
+        delay: 1,
+        ease: "power4.out"
+    });
+    var headerAdd2 = document.getElementById('header-add2');
+    headerAdd2.innerHTML = "<span class='char2'>" +
+    headerAdd2.innerHTML.split("").join("</span><span class='char2'>") + "</span>"
+    var char2 = document.getElementsByClassName('char2');
+    gsap.from(char2, {
+        yPercent: 100,
+        stagger: .07,
+        duration: 2,
+        delay: 1,
+        ease: "power4.out"
+    });
+// end text fade up   
+//start menu switch up and down
+    var menuText1 = document.getElementById('menu-txt1');
+    var menuText2 = document.getElementById('menu-txt2');
+    var menuButton = document.getElementById('menu-btn');
+
+        menuButton.addEventListener("mouseover", () => {
+            gsap.to(menuText1, {
+                yPercent: 100,
+                duration: .5,
+                ease: "power4.out",
+            });
+            gsap.to(menuText2, {
+                yPercent: 100,
+                duration: .5,
+                ease: "power4.out",
+            })
+        });
+        menuButton.addEventListener("mouseleave", () => {
+            gsap.to(menuText1, {
+                yPercent: 0,
+                duration: .5,
+                ease: "power4.out",
+            });
+            gsap.to(menuText2, {
+                yPercent: 0,
+                duration: .5,
+                ease: "power4.out",
+            })
+        });
+//end menu switch up and down
+//start logo zoom on hover
+var logo = document.getElementById('logo');
+var icon = document.getElementById('logo-icon');
+        
+        icon.addEventListener('mouseover', () => {
+            gsap.to(icon, {
+                rotate: 0,
+                ease: 'power2.out',
+                duration: 1,
+                scale: 1.4,
+            })
+        })
+        icon.addEventListener('mouseleave', () => {
+            gsap.to(icon, {
+                rotate: 90,
+                ease: 'power2.out',
+                duration: .7,
+                scale: 1,
+            })
+        })
+        
+//start change backgroundcolor while scrolling
+var test = document.getElementById("test");
+
+document.onscroll = function() {
+
+		scrollTop = window.pageYOffset;
+    
+    allDivs = document.getElementsByTagName('div');
+
+    for( i=0; i< allDivs.length; i++ )
+    {
+    		curDiv = allDivs[i];
+        
+        
+        // The code below makes the background color change when the 						scroll top passes the 2/3 of the previous div.
+        
+        heightBefore = 0;    
+        if (i > 0){
+        		heightBefore = allDivs[i-1].offsetHeight / .5;
+        }
+        
+        if (scrollTop > curDiv.offsetTop - heightBefore){
+        		color = curDiv.getAttribute("data-color");
+          	document.body.style.background = color;
+        }
+                
+    }
+};
+  
+
+        

@@ -18,7 +18,7 @@
     src: url(../fonts/PlayfairDisplay-Italic.ttf);
 }
 html{
-  background: black;
+  background: rgb(0, 0, 0);
   cursor: none !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -27,12 +27,19 @@ body{
     position: relative;
     max-width: 100vw;
     overflow-x: hidden;
+    transition: background  .5s ease-in-out;
+    -webkit-transition: background .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out;
+    -ms-transition: background .5s ease-in-out;
+    -o-transition: background .5s ease-in-out;
+    transition: background .5s ease-in-out;
 }
+
 p{
     font-size: calc(15px + 0.390625vw);
 }
 h1{
-    font-size: 7vw;
+    font-size: calc(30px + 11vw);
 }
 h2{
     font-size: 5vw;
@@ -88,7 +95,12 @@ h2{
 }
 .relative{
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
 }
+/*
 .content{
     position: relative;
     text-align: center;
@@ -105,11 +117,13 @@ h2{
     animation-range: cover 55% cover 100%;
     overflow: hidden;
 }
+    */
 .flex-element{
     display: flex;
 }
 .block-element{
     display: block;
+    text-align: left;
 }
 .verkleinert{
     font-size: x-large;
@@ -226,14 +240,14 @@ h2{
     text-align: left;
 }
 .top-left{
-    margin-left: 5vw;
+    margin-left: 20px;
     margin-top: 2vh;
     position: fixed;
     z-index: 10000000;
 }
 .logo-icon{
-    width: 13vw;
-    min-width: 7vh;
+    width: 30px;
+    rotate: 90deg;
 }
 .menu-list-container{
     width: 100vw;
@@ -267,6 +281,10 @@ h2{
     position: fixed;
     z-index: 10;
     opacity: 1;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
 }
 .link-element,
 .menu-list-container{
@@ -301,4 +319,40 @@ h2{
     width: 100%;
     height: 12.5%;
     background: rgb(106, 19, 199);
+}
+.new, 
+.char1,
+.char2{
+    display: inline-block;
+    position: relative;
+}
+.upperHeader{
+    height: calc(35px + 12.5vw);    
+    overflow: hidden;
+}
+.upperHeader_large{
+    height: calc(35px + 12.5vw) ;
+    overflow: hidden;
+}
+.upperHeader_bottom{
+    height: calc(35px + 12.5vw);
+    overflow: hidden;
+}
+.char2{
+    color: rgb(102, 102, 102);
+}
+.scroll-down-icon{
+    font-size: 10vw;
+    width: fit-content;
+    z-index: 1000;
+    height: fit-content;
+    margin-left: auto;
+}
+.scroll-down-icon-container{
+    margin-left: auto;
+    margin-right: 20px;
+}
+.aside-both{
+    display: flex;
+    align-items: baseline;
 }
