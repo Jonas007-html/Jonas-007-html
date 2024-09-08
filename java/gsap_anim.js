@@ -552,6 +552,255 @@ document.onscroll = function() {
                 
     }
 };
-  
 
+
+//start autoscroll vertical text
+/*
+var scrollSection = document.getElementById('autoscroll');
+let scrollPosition = 0;
+let scrollSpeed = 2;
+let animationId;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+async function autoScroll() {
+    scrollPosition += scrollSpeed;
+    scrollSection.scrollTo({left: scrollPosition, behavior: 'smooth',});
+    
+    if (scrollPosition < scrollSection.scrollWidth) {
+        animationId = requestAnimationFrame(autoScroll);
+      }
+      await sleep(50);
+}
+
+animationId = requestAnimationFrame(autoScroll);
+setInterval(autoScroll(), 10)
+// await sleep(0);  
+*/
+
+/*let scrollTl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0,
+});
+let childTl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0,
+});
+
+scrollTl.fromTo(babies,{
+    xPercent: 0,
+} ,{
+    xPercent: -100,
+    duration: 5,
+    ease: 'linear',
+})
+
+scrollTl.fromTo(babies, {
+    xPercent: 100,
+    ease: 'linear',
+    duration: 0,
+},{
+        xPercent: 0,
+        duration: 5,
+        ease: 'linear',
+})
+*/
+/*
+scrollTl.set(babies, {
+    xPercent: 0,
+});
+
+scrollTl.to(babies, {
+    xPercent: -100,
+    duration: 2,
+    ease: 'linear'
+});
+
+scrollTl.set(babies, {
+    xPercent: 100,
+})
+  
+scrollTl.set(babies, {
+    xPercent: 100,
+})
+scrollTl.to(babies, {
+    xPercent: -100,
+    duration: 5,
+    ease: 'linear',
+})
+childTl.set(child, {
+    xPercent: -50,
+})
+childTl.to(child, {
+    xPercent: -200,
+    duration: 5,
+    ease: 'linear',
+    delay: 5
+})
+
+let scrollSection = document.getElementById('autoscroll');
+let scrollPosition = 0;
+
+Observer.create({
+    target: window,
+    type: 'wheel,touch,pointer',
+    onDown: () => {
+        babies.style.animationName = "scroll-reverse";
+    },
+    onUp: () => {
+        babies.style.animationName = "scroll";
+    }
+})
+Observer.create({
+    target: window,
+    type: 'wheel,touch,pointer',
+    onDown: () => {
+        babies_2.style.animationName = "scroll-reverse";
+    },
+    onUp: () => {
+        babies_2.style.animationName = "scroll";
+    }
+})
+*/
+setInterval(
+    function info() {
+       // console.log(babies)
+    }, 100);
+
+
+let babies = document.querySelectorAll("#baby")
+
+
+gsap.registerEffect({
+    name: 'scrolling',
+    effect: (targets, config) => {
+        return gsap.to(targets, {
+            duration: config.duration, 
+            xPercent: -101,
+            ease: 'linear',
+            onComplete: () => {
+                let putElementsInside = document.getElementById('autoscroll');
+                //putElementsInside.firstElementChild.remove();
+            }
+        });
+      },
+      defaults: {duration: 5,}
+})
+
+/*
+setInterval(function creation() {
+    let putElementsInside = document.getElementById('autoscroll');
+    const divAround = document.createElement('div');
+        divAround.classList.add('baby');
+        divAround.setAttribute('id', 'baby');
         
+    putElementsInside.appendChild(divAround);
+
+    const divInside = document.createElement('h1');
+    divInside.innerHTML = 'kompetent und alles andere';
+    divAround.appendChild(divInside);
+    //const clonedDiv = divAround.cloneNode(true);
+    //putElementsInside.appendChild(clonedDiv);
+    let babies = document.querySelectorAll("#baby");
+    babies.forEach(() => {
+        gsap.effects.scrolling(babies);
+    });
+    console.log(putElementsInside.firstElementChild);
+    putElementsInside.firstElementChild.remove();
+
+}, 4000)
+
+babies.forEach(() => {
+    gsap.effects.scrolling(babies);
+}) 
+*/
+
+babies.forEach(() => {
+    gsap.effects.scrolling(babies);
+});
+/*
+function newElement() {
+    let putElementsInside = document.getElementById('autoscroll');
+    const divAround = document.createElement('div');
+        divAround.classList.add('baby');
+        divAround.setAttribute('id', 'baby');
+    
+        putElementsInside.appendChild(divAround);
+
+    const divInside = document.createElement('h1');
+    divInside.innerHTML = 'kompetent und alles andere';
+    divAround.appendChild(divInside);
+    //const clonedDiv = divAround.cloneNode(true);
+    //putElementsInside.appendChild(clonedDiv);
+    let babies = document.querySelectorAll("#baby");
+    let latest = babies.lastElementChild;
+    gsap.effects.scrolling(latest);
+    /*
+    babies.forEach(() => {
+        gsap.effects.scrolling(latest);
+    });
+    
+    console.log(putElementsInside.lastElementChild);
+}
+*/
+/*
+setInterval(function refresh () {
+    let putElementsInside = document.getElementById('autoscroll');
+    //let secondBaby = putElementsInside.children[0];
+    let secondBaby = putElementsInside.lastElementChild;
+    let rect = secondBaby.getBoundingClientRect();
+    console.log (rect.right);
+    if(rect.right <= window.innerWidth){
+        newElement();
+        if(rect.right <= 0){
+        let putElementsInside = document.getElementById('autoscroll');
+        putElementsInside.firstElementChild.remove();
+        console.log('removed');
+        }
+    };
+}, 100)
+
+*/
+const autoscrollContainer = document.getElementById('autoscroll');
+const createBabyElement = () => {
+  const babyElement = document.createElement('div');
+  babyElement.classList.add('baby');
+  babyElement.setAttribute('id', 'baby');
+
+  const textElement = document.createElement('h1');
+  textElement.textContent = 'kompetent und alles andere';
+  babyElement.appendChild(textElement);
+
+  autoscrollContainer.appendChild(babyElement);
+  gsap.effects.scrolling(babyElement, { duration: 5 });
+};
+createBabyElement();
+gsap.registerEffect({
+  name: 'scrolling',
+  effect: (targets, config) => {
+    return gsap.to(targets, {
+      duration: config.duration,
+      xPercent: -200,
+      ease: 'linear',
+      onComplete: () => {
+        targets.forEach(target => target.remove());
+      }
+    });
+  },
+  defaults: { duration: 5 }
+});
+
+
+
+
+const refreshInterval = setInterval(() => {
+  const lastBabyElement = autoscrollContainer.lastElementChild;
+  
+    const rect = lastBabyElement.getBoundingClientRect();
+    console.log(rect.right)
+    if (rect.right <= window.innerWidth) {
+      createBabyElement();
+    }
+}, 400);
