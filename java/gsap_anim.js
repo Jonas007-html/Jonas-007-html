@@ -492,7 +492,7 @@ const square = document.querySelector('.square');
         });
         menuButton.addEventListener("mouseleave", () => {
             gsap.to(menuText1, {
-                yPercent: 0,
+                yPercent: 0, 
                 duration: .5,
                 ease: "power4.out",
             });
@@ -642,17 +642,9 @@ childTl.to(child, {
 
 let scrollSection = document.getElementById('autoscroll');
 let scrollPosition = 0;
+*/
 
-Observer.create({
-    target: window,
-    type: 'wheel,touch,pointer',
-    onDown: () => {
-        babies.style.animationName = "scroll-reverse";
-    },
-    onUp: () => {
-        babies.style.animationName = "scroll";
-    }
-})
+/*
 Observer.create({
     target: window,
     type: 'wheel,touch,pointer',
@@ -663,7 +655,8 @@ Observer.create({
         babies_2.style.animationName = "scroll";
     }
 })
-*/
+
+/*
 setInterval(
     function info() {
        // console.log(babies)
@@ -672,7 +665,7 @@ setInterval(
 
 let babies = document.querySelectorAll("#baby")
 
-
+/*
 gsap.registerEffect({
     name: 'scrolling',
     effect: (targets, config) => {
@@ -716,7 +709,7 @@ babies.forEach(() => {
     gsap.effects.scrolling(babies);
 }) 
 */
-
+/*
 babies.forEach(() => {
     gsap.effects.scrolling(babies);
 });
@@ -763,6 +756,68 @@ setInterval(function refresh () {
 }, 100)
 
 */
+/*
+let scrollEffectForward = gsap.registerEffect({
+                            name: 'scrolling',
+                            effect: (targets, config) => {
+                            return gsap.fromTo(targets, {
+                                duration: config.duration,
+                                xPercent: 0,
+                                ease: 'linear',
+                                onComplete: () => {
+                                //targets.forEach(target => target.remove());
+                                //createBabyElement();
+                                console.log('completed')
+                                }
+                            }, {
+                                xPercent: -200,
+                                duration: config.duration,
+                                ease: 'linear'
+                            });
+                            },
+                            defaults: { duration: 5 }
+                        });
+*/
+gsap.config({
+    units: {
+        x: 'px'
+    }
+})
+
+let scrollEffectForward = gsap.registerEffect({
+                            name: 'scrolling',
+                            effect: (targets, config) => {
+                            return  gsap.to(targets, {
+                                duration: config.duration,
+                                xPercent: -200,
+                                ease: 'linear',
+                                onComplete: () => {
+                                //targets.forEach(target => target.remove());
+                                //createBabyElement();
+                                console.log('completed')
+                                }
+                            });
+                            },
+                            defaults: { duration: 5 }
+                        });
+
+
+
+let scrollEffectReward = gsap.registerEffect({
+                            name: 'scrollingReward',
+                            effect: (targets, config) => {
+                            return gsap.to(targets, {
+                                duration: config.duration,
+                                xPercent: 200,
+                                ease: 'linear',
+                                onComplete: () => {
+                                console.log('completed')
+                                }
+                            });
+                            },
+                            defaults: { duration: 5 }
+                        });
+
 const autoscrollContainer = document.getElementById('autoscroll');
 const createBabyElement = () => {
   const babyElement = document.createElement('div');
@@ -770,13 +825,28 @@ const createBabyElement = () => {
   babyElement.setAttribute('id', 'baby');
 
   const textElement = document.createElement('h1');
-  textElement.textContent = 'kompetent und alles andere';
+  textElement.textContent = 'Kompetenzen - Chancen - Vielfalt -';
   babyElement.appendChild(textElement);
 
   autoscrollContainer.appendChild(babyElement);
-  gsap.effects.scrolling(babyElement, { duration: 5 });
+  /*
+
+  var scrollEffectForward = gsap.to(babyElement, {
+                                duration: 5,
+                                x: -4000,
+                                ease: 'linear',
+                                onComplete: () => {
+                                //targets.forEach(target => target.remove());
+                                //createBabyElement();
+                                console.log('completed')
+                                }
+                                });
+                                */
+  gsap.effects.scrolling(babyElement, { duration: 30 });
 };
 createBabyElement();
+//setInterval(createBabyElement(), 100)
+/*
 gsap.registerEffect({
   name: 'scrolling',
   effect: (targets, config) => {
@@ -785,13 +855,15 @@ gsap.registerEffect({
       xPercent: -200,
       ease: 'linear',
       onComplete: () => {
-        targets.forEach(target => target.remove());
+        //targets.forEach(target => target.remove());
+        createBabyElement();
+        console.log('completed')
       }
     });
   },
   defaults: { duration: 5 }
 });
-
+*/
 
 
 
@@ -799,8 +871,116 @@ const refreshInterval = setInterval(() => {
   const lastBabyElement = autoscrollContainer.lastElementChild;
   
     const rect = lastBabyElement.getBoundingClientRect();
-    console.log(rect.right)
-    if (rect.right <= window.innerWidth) {
+    //console.log(Math.round(rect.right));
+    //console.log(Math.round(window.innerWidth));
+    //console.log(autoscrollContainer.lastElementChild.clientWidth)
+    const totalWidth =  window.innerWidth;
+    if (rect.right <= totalWidth) {
       createBabyElement();
+      console.log('creation')
     }
-}, 400);
+}, 200)
+setInterval(deleteTrash, 500)
+function deleteTrash() {
+    const autoscroll = document.querySelector('#autoscroll')
+    if (autoscroll.childElementCount >= 3) {
+        autoscroll.removeChild(autoscroll.children[0]);
+        console.log('removed')
+     }
+    console.log(autoscroll.childElementCount)
+};
+
+Observer.create({
+    target: window,
+    type: 'wheel,touch,pointer',
+    onDown: () => {
+        let kleinkind = document.getElementsByClassName("baby")
+        //gsap.effects.scrolling(kleinkind);
+        //scrollEffectForward.reverse()
+    },
+    onUp: () => {
+        let kleinkind = document.getElementsByClassName("baby");
+        
+            //gsap.effects.scrollEffectForward.kill();
+            //gsap.effects.scrollingReward(kleinkind);
+          
+        //gsap.effects.scrollingReward(kleinkind);
+        //scrolling.reverse()
+        console.log('REVERSE');
+        
+    }
+})
+
+/*
+const autoscrollContainer = document.getElementById('autoscroll');
+
+const createBabyElement = () => {
+  const babyElement = document.createElement('div');
+  babyElement.classList.add('baby');
+  babyElement.setAttribute('id', 'baby');
+
+  const textElement = document.createElement('h1');
+  textElement.textContent = 'Kompetenzen - Chancen - Vielfalt -';
+  babyElement.appendChild(textElement);
+
+  autoscrollContainer.appendChild(babyElement);
+
+  const scrollEffectForward = gsap.to(babyElement, {
+    duration: 5,
+    x: -4000,
+    ease: 'linear',
+    onComplete: () => {
+      console.log('completed');
+    }
+  });
+};
+
+createBabyElement();
+
+const refreshInterval = setInterval(() => {
+  const lastBabyElement = autoscrollContainer.lastElementChild;
+
+  if (lastBabyElement) {
+    const rect = lastBabyElement.getBoundingClientRect();
+    const totalWidth = window.innerWidth;
+
+    if (rect.right <= totalWidth) {
+      createBabyElement();
+      console.log('creation');
+    }
+  }
+}, 200);
+
+setInterval(deleteTrash, 500);
+
+function deleteTrash() {
+  const autoscroll = document.querySelector('#autoscroll');
+
+  if (autoscroll.childElementCount >= 3) {
+    autoscroll.removeChild(autoscroll.children[0]);
+    console.log('removed');
+  }
+
+  console.log(autoscroll.childElementCount);
+}
+
+Observer.create({
+  target: window,
+  type: 'wheel,touch,pointer',
+  onDown: () => {
+    const kleinkind = document.getElementsByClassName("baby");
+    Array.from(kleinkind).forEach(element => {
+      gsap.to(element, { 
+        duration: 5, 
+        x: 1000 
+        });
+    });
+  },
+  onUp: () => {
+    const kleinkind = document.getElementsByClassName("baby");
+    Array.from(kleinkind).forEach(element => {
+      gsap.to(element, { duration: 5, x: -1000 });
+    });
+  }
+});
+*/
