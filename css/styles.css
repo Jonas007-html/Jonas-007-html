@@ -440,12 +440,14 @@ h2{
     display: flex;
     height: 300px;
     align-items: center;
+    left: 100%;
+    position: relative;
 }
 .words-scroll div{
     display: block;
     animation: 10s scroll infinite linear;
     position: absolute;
-    transform: translateX(100vw);
+    /*transform: translateX(150vw);*/
 }
 .words-scroll div h1{
     white-space: nowrap;
