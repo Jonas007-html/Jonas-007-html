@@ -538,7 +538,7 @@ document.onscroll = function() {
     		curDiv = allDivs[i];
         
         
-        // The code below makes the background color change when the 						scroll top passes the 2/3 of the previous div.
+        // The code below makes the background color change when the scroll top passes the 2/3 of the previous div.
         
         heightBefore = 0;    
         if (i > 0){
@@ -553,446 +553,84 @@ document.onscroll = function() {
     }
 };
 
-
-//start autoscroll vertical text
-/*
-var scrollSection = document.getElementById('autoscroll');
-let scrollPosition = 0;
-let scrollSpeed = 2;
-let animationId;
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
-async function autoScroll() {
-    scrollPosition += scrollSpeed;
-    scrollSection.scrollTo({left: scrollPosition, behavior: 'smooth',});
-    
-    if (scrollPosition < scrollSection.scrollWidth) {
-        animationId = requestAnimationFrame(autoScroll);
-      }
-      await sleep(50);
-}
-
-animationId = requestAnimationFrame(autoScroll);
-setInterval(autoScroll(), 10)
-// await sleep(0);  
-*/
-
-/*let scrollTl = gsap.timeline({
-    repeat: -1,
-    repeatDelay: 0,
-});
-let childTl = gsap.timeline({
-    repeat: -1,
-    repeatDelay: 0,
-});
-
-scrollTl.fromTo(babies,{
-    xPercent: 0,
-} ,{
-    xPercent: -100,
-    duration: 5,
-    ease: 'linear',
-})
-
-scrollTl.fromTo(babies, {
-    xPercent: 100,
-    ease: 'linear',
-    duration: 0,
-},{
-        xPercent: 0,
-        duration: 5,
-        ease: 'linear',
-})
-*/
-/*
-scrollTl.set(babies, {
-    xPercent: 0,
-});
-
-scrollTl.to(babies, {
-    xPercent: -100,
-    duration: 2,
-    ease: 'linear'
-});
-
-scrollTl.set(babies, {
-    xPercent: 100,
-})
-  
-scrollTl.set(babies, {
-    xPercent: 100,
-})
-scrollTl.to(babies, {
-    xPercent: -100,
-    duration: 5,
-    ease: 'linear',
-})
-childTl.set(child, {
-    xPercent: -50,
-})
-childTl.to(child, {
-    xPercent: -200,
-    duration: 5,
-    ease: 'linear',
-    delay: 5
-})
-
-let scrollSection = document.getElementById('autoscroll');
-let scrollPosition = 0;
-*/
-
-/*
-Observer.create({
-    target: window,
-    type: 'wheel,touch,pointer',
-    onDown: () => {
-        babies_2.style.animationName = "scroll-reverse";
-    },
-    onUp: () => {
-        babies_2.style.animationName = "scroll";
-    }
-})
-
-/*
-setInterval(
-    function info() {
-       // console.log(babies)
-    }, 100);
-
-
-let babies = document.querySelectorAll("#baby")
-
-/*
-gsap.registerEffect({
-    name: 'scrolling',
-    effect: (targets, config) => {
-        return gsap.to(targets, {
-            duration: config.duration, 
-            xPercent: -101,
-            ease: 'linear',
-            onComplete: () => {
-                let putElementsInside = document.getElementById('autoscroll');
-                //putElementsInside.firstElementChild.remove();
-            }
-        });
-      },
-      defaults: {duration: 5,}
-})
-
-/*
-setInterval(function creation() {
-    let putElementsInside = document.getElementById('autoscroll');
-    const divAround = document.createElement('div');
-        divAround.classList.add('baby');
-        divAround.setAttribute('id', 'baby');
-        
-    putElementsInside.appendChild(divAround);
-
-    const divInside = document.createElement('h1');
-    divInside.innerHTML = 'kompetent und alles andere';
-    divAround.appendChild(divInside);
-    //const clonedDiv = divAround.cloneNode(true);
-    //putElementsInside.appendChild(clonedDiv);
-    let babies = document.querySelectorAll("#baby");
-    babies.forEach(() => {
-        gsap.effects.scrolling(babies);
-    });
-    console.log(putElementsInside.firstElementChild);
-    putElementsInside.firstElementChild.remove();
-
-}, 4000)
-
-babies.forEach(() => {
-    gsap.effects.scrolling(babies);
-}) 
-*/
-/*
-babies.forEach(() => {
-    gsap.effects.scrolling(babies);
-});
-/*
-function newElement() {
-    let putElementsInside = document.getElementById('autoscroll');
-    const divAround = document.createElement('div');
-        divAround.classList.add('baby');
-        divAround.setAttribute('id', 'baby');
-    
-        putElementsInside.appendChild(divAround);
-
-    const divInside = document.createElement('h1');
-    divInside.innerHTML = 'kompetent und alles andere';
-    divAround.appendChild(divInside);
-    //const clonedDiv = divAround.cloneNode(true);
-    //putElementsInside.appendChild(clonedDiv);
-    let babies = document.querySelectorAll("#baby");
-    let latest = babies.lastElementChild;
-    gsap.effects.scrolling(latest);
-    /*
-    babies.forEach(() => {
-        gsap.effects.scrolling(latest);
-    });
-    
-    console.log(putElementsInside.lastElementChild);
-}
-*/
-/*
-setInterval(function refresh () {
-    let putElementsInside = document.getElementById('autoscroll');
-    //let secondBaby = putElementsInside.children[0];
-    let secondBaby = putElementsInside.lastElementChild;
-    let rect = secondBaby.getBoundingClientRect();
-    console.log (rect.right);
-    if(rect.right <= window.innerWidth){
-        newElement();
-        if(rect.right <= 0){
-        let putElementsInside = document.getElementById('autoscroll');
-        putElementsInside.firstElementChild.remove();
-        console.log('removed');
-        }
-    };
-}, 100)
-
-*/
-/*
-let scrollEffectForward = gsap.registerEffect({
-                            name: 'scrolling',
-                            effect: (targets, config) => {
-                            return gsap.fromTo(targets, {
-                                duration: config.duration,
-                                xPercent: 0,
-                                ease: 'linear',
-                                onComplete: () => {
-                                //targets.forEach(target => target.remove());
-                                //createBabyElement();
-                                console.log('completed')
-                                }
-                            }, {
-                                xPercent: -200,
-                                duration: config.duration,
-                                ease: 'linear'
-                            });
-                            },
-                            defaults: { duration: 5 }
-                        });
-*/
-gsap.config({
-    units: {
-        x: 'px'
-    }
-})
-
-
-
-  
-
-
-
+// start infinite scrolling text 
 
 const autoscrollContainer = document.getElementById('autoscroll');
-
 const createBabyElement = () => {
-  const babyElement = document.createElement('div');
-  babyElement.classList.add('baby');
-  babyElement.setAttribute('id', 'baby');
-
-  const textElement = document.createElement('h1');
-  textElement.textContent = 'Kompetenzen - Chancen - Vielfalt -';
-  babyElement.appendChild(textElement);
-
-  autoscrollContainer.appendChild(babyElement);
-  /*
-
-  var scrollForward = gsap.to(babyElement, {
-                                duration: 5,
-                                x: -4000,
-                                ease: 'linear',
-                                onComplete: () => {
-                                //targets.forEach(target => target.remove());
-                                //createBabyElement();
-                                console.log('completed')
-                                }
-                                });
-                                */
-
+    const babyElement = document.createElement('div');
+    babyElement.classList.add('baby');
+    babyElement.setAttribute('id', 'baby');
+    const textElement = document.createElement('h1');
+    textElement.textContent = 'Kompetenzen - Chancen - Vielfalt -';
+    babyElement.appendChild(textElement);
+    autoscrollContainer.appendChild(babyElement);
     let actualWidth = document.getElementById('baby').offsetWidth;
     var transformationX = actualWidth * 2;
     console.log('tatsächliche verschiebung: ' + transformationX);
 
-    var scrollEffectForward = gsap.registerEffect({
-        name: 'scrolling',
-        effect: (targets, config) => { 
-        return  gsap.to(targets, {
-            duration: config.duration,
-            x: -transformationX,
-            ease: 'linear',
-            onComplete: () => {
-            //targets.forEach(target => target.remove());
-            //createBabyElement();
-            console.log('completed')
-            }
+    babyElement.style.left = '100%'
+    var anim = gsap.to(babyElement, {
+        duration: 10,
+        xPercent: -200,
+        ease: 'linear',
+        lazy: false,
         });
-        },
-        defaults: { duration: 5 }
-    });
-
-
-
-    let scrollEffectReward = gsap.registerEffect({
-            name: 'scrollingReward',
-            effect: (targets, config) => {
-            return gsap.to(targets, {
-                duration: config.duration,
-                x: transformationX,
-                ease: 'linear',
-                onComplete: () => {
-                console.log('completed')
-                }
-            });
-            },
-            defaults: { duration: 5 }
-        });
-  //gsap.effects.scrolling(babyElement, { duration: 5 });
-  var anim = gsap.to(babyElement, {
-    duration: 5,
-    xPercent: -200,
-    ease: 'linear',
-    lazy: false,
-    onComplete: () => {
-    //targets.forEach(target => target.remove());
-    //createBabyElement();
-    console.log('completed')
-    }
-    });
-    Observer.create({
-        target: window,
-        type: 'wheel,touch,pointer',
-        onDown: () => {
-            let kleinkind = document.getElementsByClassName("baby")
-            
-            Array.from(kleinkind).forEach(element => {
-                if (anim.reversed()) {
+        /*
+        Observer.create({
+            target: window,
+            type: 'wheel,touch,pointer',
+            onDown: () => {
+                let kleinkind = document.getElementsByClassName("baby")
+                
+                Array.from(kleinkind).forEach(element => {
+                    if (anim.reversed()) {
+                        anim.play();
+                    } else {
                     anim.play();
-                  } else {
-                   anim.play();
-                  }
-            });
-            
-        },
-        onUp: () => {
-            let kleinkind = document.getElementsByClassName("baby");
-            //gsap.effects.scrollEffectForward.kill();
-            //gsap.effects.scrollingReward(kleinkind);          
-            //gsap.effects.scrollingReward(kleinkind);
-            //scrolling.reverse()
-            console.log('REVERSE');
-        
-              Array.from(kleinkind).forEach(element => {
-                if (anim.reversed()) {
-                    anim.reverse();
-                  } else {
-                   anim.reverse();
-                  }
-            });
-            /*
-            Array.from(kleinkind).forEach(element => {
-                //gsap.killTweensOf(element);
-                var values = element.style.transform;
-                console.log('position' + values);
-                //gsap.effects.creBw(element);
-            });
-            */
-           
-        }
-    })
-};
-createBabyElement();
-// fortschritt erkennen und abziehen wird aber nicht differenziert je element gemacht daher unbracubar solange die werte nicht sortiert werden
-/*
-setInterval(
-function elTransformation() {
-    let kleinkind = document.getElementsByClassName("baby");
-    Array.from(kleinkind).forEach(element => {
-        //var values = element.style.transform;
-        //console.log('position' + values);
-        var style = window.getComputedStyle(element);
-        var matrix = new WebKitCSSMatrix(style.transform);
-        var valuesKlein = matrix.m41 ;
-        console.log('tttttt: ', valuesKlein);
-        let actualWidth = document.getElementById('baby').offsetWidth;
-        var transformationX = actualWidth * 2;
-        let newTransformation = (transformationX + valuesKlein);
-        console.log('test: ' + newTransformation);
-        let createdForward = gsap.registerEffect({
-            name: 'creFw',
-            effect: (targets, config) => {
-            return  gsap.to(targets, {
-                duration: config.duration,
-                x: -newTransformation,
-                ease: 'linear',
-                onComplete: () => {
-                //targets.forEach(target => target.remove());
-                //createBabyElement();
-                console.log('completed')
-                }
-            });
-            },
-            defaults: { duration: 5 }
-        });
-    
-    
-    
-        let createdBackward = gsap.registerEffect({
-                name: 'creBw',
-                effect: (targets, config) => {
-                return gsap.to(targets, {
-                    duration: config.duration,
-                    x: newTransformation,
-                    ease: 'linear',
-                    onComplete: () => {
-                    console.log('completed')
                     }
                 });
-                },
-                defaults: { duration: 5 }
-            });
-    });
-}, 10)
-*/
-//setInterval(createBabyElement(), 100)
-/*
-gsap.registerEffect({
-  name: 'scrolling',
-  effect: (targets, config) => {
-    return gsap.to(targets, {
-      duration: config.duration,
-      xPercent: -200,
-      ease: 'linear',
-      onComplete: () => {
-        //targets.forEach(target => target.remove());
-        createBabyElement();
-        console.log('completed')
-      }
-    });
-  },
-  defaults: { duration: 5 }
-});
-*/
- 
-
+                
+            },
+            onUp: () => {
+                let kleinkind = document.getElementsByClassName("baby");
+                //gsap.effects.scrollEffectForward.kill();
+                //gsap.effects.scrollingReward(kleinkind);          
+                //gsap.effects.scrollingReward(kleinkind);
+                //scrolling.reverse()
+                console.log('REVERSE');
+            
+                Array.from(kleinkind).forEach(element => {
+                    if (anim.reversed()) {
+                        anim.reverse();
+                    } else {
+                    anim.reverse();
+                    }
+                });
+                /*
+                Array.from(kleinkind).forEach(element => {
+                    //gsap.killTweensOf(element);
+                    var values = element.style.transform;
+                    console.log('position' + values);
+                    //gsap.effects.creBw(element);
+                });
+                */
+            /*
+            }
+            
+        })
+        */
+};
+createBabyElement();
 const refreshInterval = setInterval(() => {
-  const lastBabyElement = autoscrollContainer.lastElementChild;
-  
-    const rect = lastBabyElement.getBoundingClientRect();
+const lastBabyElement = autoscrollContainer.lastElementChild;  
+const rect = lastBabyElement.getBoundingClientRect();
     //console.log(Math.round(rect.right));
     //console.log(Math.round(window.innerWidth));
     //console.log(autoscrollContainer.lastElementChild.clientWidth)
-    const totalWidth =  window.innerWidth;
-    if (rect.right <= totalWidth) {
-      createBabyElement();
-      console.log('creation')
+const totalWidth =  window.innerWidth;
+if (rect.right <= totalWidth) {
+    createBabyElement();
+    console.log('creation')
     }
 }, 200)
 setInterval(deleteTrash, 500)
@@ -1001,119 +639,7 @@ function deleteTrash() {
     if (autoscroll.childElementCount >= 3) {
         autoscroll.removeChild(autoscroll.children[0]);
         console.log('removed')
-     }
+    }
     console.log(autoscroll.childElementCount)
 };
-
-
-
-/*
-const autoscrollContainer = document.getElementById('autoscroll');
-
-const createBabyElement = () => {
-  const babyElement = document.createElement('div');
-  babyElement.classList.add('baby');
-  babyElement.setAttribute('id', 'baby');
-
-  const textElement = document.createElement('h1');
-  textElement.textContent = 'Kompetenzen - Chancen - Vielfalt -';
-  babyElement.appendChild(textElement);
-
-  autoscrollContainer.appendChild(babyElement);
-
-  const scrollEffectForward = gsap.to(babyElement, {
-    duration: 5,
-    x: -4000,
-    ease: 'linear',
-    onComplete: () => {
-      console.log('completed');
-    }
-  });
-};
-
-createBabyElement();
-
-const refreshInterval = setInterval(() => {
-  const lastBabyElement = autoscrollContainer.lastElementChild;
-
-  if (lastBabyElement) {
-    const rect = lastBabyElement.getBoundingClientRect();
-    const totalWidth = window.innerWidth;
-
-    if (rect.right <= totalWidth) {
-      createBabyElement();
-      console.log('creation');
-    }
-  }
-}, 200);
-
-setInterval(deleteTrash, 500);
-
-function deleteTrash() {
-  const autoscroll = document.querySelector('#autoscroll');
-
-  if (autoscroll.childElementCount >= 3) {
-    autoscroll.removeChild(autoscroll.children[0]);
-    console.log('removed');
-  }
-
-  console.log(autoscroll.childElementCount);
-}
-
-Observer.create({
-  target: window,
-  type: 'wheel,touch,pointer',
-  onDown: () => {
-    const kleinkind = document.getElementsByClassName("baby");
-    Array.from(kleinkind).forEach(element => {
-      gsap.to(element, { 
-        duration: 5, 
-        x: 1000 
-        });
-    });
-  },
-  onUp: () => {
-    const kleinkind = document.getElementsByClassName("baby");
-    Array.from(kleinkind).forEach(element => {
-      gsap.to(element, { duration: 5, x: -1000 });
-    });
-  }
-});
-*/
-setInterval(function getState (){
-    let kleinkind = document.getElementsByClassName("baby");
-    Array.from(kleinkind).forEach(element => {
-        
-        
-
-        var style = window.getComputedStyle(element);
-        var matrix = new WebKitCSSMatrix(style.transform);
-        var valuesKlein = matrix.m41 ;
-        var withUnit = valuesKlein + 'px'
-        console.log('position: ' + withUnit);
-        console.log('translateX: ', matrix.m41);
-        var completeWord = 'translateX(' + withUnit + ')'
-        //element.style.transform  = completeWord;
-        element.style.opacity = ".5"
-    });
-}, 200)
-/*
-setInterval(function clearPosition() {
-    let kleinkind = document.getElementById("baby");
-    var valuesKlein = values / 2;
-    kleinkind.style.valuesKlein;
-}, 200)
-*/
-let Parent = document.getElementById('autoscroll');
-let wholeWhidth = document.getElementById('baby')
-let elementWidth = wholeWhidth.offsetWidth * 3
-console.log('breite ' + elementWidth);
-let widthUnit = elementWidth + 'px'
-Parent.style.width = widthUnit
-/*
-let halfWidth = elementWidth / 2
-let tallPercentage = halfWidth + 'px'
-let smallPercentage = halfWidth / 4 + 'px'
-let calculated = tallPercentage
-//Parent.style.transform = 'translate(' + smallPercentage + ')'
-*/
+// end infinite scrolling text
