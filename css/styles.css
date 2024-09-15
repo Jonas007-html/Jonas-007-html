@@ -395,6 +395,7 @@ h2{
     width: fit-content;
     height: fit-content;
     margin-left: 5vw;
+    margin-bottom: 50px;
 }
 .block{
     display: flex;
@@ -405,10 +406,14 @@ h2{
     width: 50vw;
     min-width: 260px;
     margin-left: auto;
-    text-align: right;
     margin-right: 5vw;
 }
-
+@media screen and (max-width: 500px) {
+    .content{
+        width: 100%;
+        margin-left: 5vw !important;
+    }
+}
 .bild_1 img{
     width: 30vw;
     min-width: 200px;
@@ -419,7 +424,7 @@ h2{
     margin-top: 100px;
 }
 .bild_2 img{
-    width: 50vw;
+    width: 30vw;
     min-width: 220px;
 }
 .bild_2{
@@ -454,23 +459,57 @@ h2{
 .words-scroll div h1{
     white-space: nowrap;
 }
-/* lenis scroll smoother required css */
-html.lenis, html.lenis body {
-    height: auto;
-  }
-  
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-  
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-  
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-  
-  .lenis.lenis-smooth iframe {
-    pointer-events: none;
-  }
+.cardBack{
+    min-width: 220px;
+    width: 40vw;
+    max-width: 350px;   
+}
+.card{
+    min-width: 220px;
+    width: 40vw;
+    max-width: 350px;
+    height: 40vw;
+    min-height: 220px;
+    max-height: 350px;
+    display: block;
+    background-image: url(../img/karte.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.smallNumber{
+    font-size: x-small;
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+.around{
+    font-size: 2.4em;
+}
+.mainContent{
+    margin: 0;
+    margin-left: 10px;
+    display: block;
+    line-height: 1;
+    letter-spacing: -0.15vw;
+    display: block;
+}
+.cardIcon{
+    bottom: 0;
+    margin-top: 30px;
+    margin-left: 25px;
+    font-size: xx-large;
+    display: block;
+}
+.button{
+    bottom: 0;
+    margin-top: auto;
+    display: block;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: 10px;
+    position: relative;
+}
+.button a{
+    text-decoration: none;
+}

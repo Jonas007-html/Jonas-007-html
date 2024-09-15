@@ -570,7 +570,7 @@ const createBabyElement = () => {
 
     babyElement.style.left = '100%'
     var anim = gsap.to(babyElement, {
-        duration: 10,
+        duration: 15,
         xPercent: -200,
         ease: 'linear',
         lazy: false,
